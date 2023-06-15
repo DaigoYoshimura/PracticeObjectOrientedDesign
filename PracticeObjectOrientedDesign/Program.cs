@@ -16,23 +16,14 @@ namespace PracticeObjectOrientedDesign
     {
         static void Main(string[] args)
         {
-            Shape circle = new Shape
-            {
-                Type = ShapeType.Circle,
-                Radius = 5
-            };
-
-            Shape square = new Shape
-            {
-                Type = ShapeType.Square,
-                SideLength = 10
-            };
-
+            IShape circle = new Circle();
+            circle.Radius = 5;
             double circleArea = circle.CalculateArea();
+
+            IShape square = new Square();
+            square.SideLength = 10;
             double squareArea = square.CalculateArea();
 
-            Console.WriteLine("円の面積: " + circleArea);
-            Console.WriteLine("正方形の面積: " + squareArea);
         }
     }
 }
